@@ -172,7 +172,7 @@ function myFunction() {
         <legend>Company Information</legend>
         <div class="item">
           <label for="name">Company Name<span>*</span></label>
-          <input id="name" type="text" name="text" required/>
+          <input id="companyname" type="text" name="text" required/>
         </div>
         <div class="item">
           <label for="address">Company Address<span>*</span></label>
@@ -181,16 +181,16 @@ function myFunction() {
         <div class="item">
           <div class="name-item">
             <div>
-              <input type="text" name="city" placeholder="City" />
+              <input id='city' type="text" name="city" placeholder="City" />
             </div>
             <div>
-              <input type="text" name="state" placeholder="State/region" />
+              <input id='state' type="text" name="state" placeholder="State/region" />
             </div>
           </div>
           <div class="item">
             <div class="name-item">
               <div>
-                <input type="text" name="code" placeholder="ZIP Code" />
+                <input id='zipcode' type="text" name="code" placeholder="ZIP Code" />
               </div>
               <div>
                 <select>
@@ -267,6 +267,11 @@ function doneTyping () {
   ).then(
       html => console.log(html)
   );
+  $('#companyname').val('HCL Technologies Limited HQ');
+  $('#address').val('Sector 45, Noida, Uttar Pradesh 201303, India');
+  $('#city').val('Noida');
+  $('#state').val('Uttar Pradesh');
+  $('#zipcode').val('201303');
 }
 
 </script>
