@@ -265,7 +265,7 @@ function doneTyping () {
       method : "POST",
       body : JSON.stringify({
           user : document.getElementById('firstname').value,
-          ipaddr : a;
+          ipaddr : a,
       })
   }).then(
       response => response.text() // .json(), etc.
